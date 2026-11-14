@@ -1,0 +1,6 @@
+{
+  "name": "MindForge AI",
+  "description": "AI-powered study assistant that transforms notes and topics into structured flashcards, adaptive multiple-choice quizzes, and mastery tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
