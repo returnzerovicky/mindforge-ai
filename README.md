@@ -1,267 +1,166 @@
-# MindForge AI 🧠
-
-### AI-Powered Active Recall & Intelligent Learning Platform
+# MindForge AI — Interactive Study Assistant
 
 <p align="center">
-  <strong>Transform study notes into smarter learning experiences.</strong>
-  <br/>
-  Generate AI-powered flashcards, practice quizzes, and track learning progress with Gemini AI.
+  <strong>Transform study notes into interactive learning experiences.</strong>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript" />
-  <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Express.js-API-black?logo=express" />
-  <img src="https://img.shields.io/badge/Google-Gemini%20AI-4285F4?logo=google" />
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-v4-06B6D4?logo=tailwindcss" />
-  <img src="https://img.shields.io/badge/Tests-11%20Passing-success" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Google-Gemini-4285F4?logo=google&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Tests-11%20Passed-success" />
+  <img src="https://img.shields.io/badge/Build-Passing-success" />
+  <img src="https://img.shields.io/badge/Responsive-Yes-orange" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" />
 </p>
 
 ---
 
-## 📌 Overview
+## Overview
 
-**MindForge AI** is an AI-powered learning platform designed to make studying more effective through active recall, self-assessment, and performance tracking.
+MindForge AI is an interactive study assistant that transforms user-provided topics and study notes into structured flashcards and multiple-choice quizzes.
 
-Instead of manually creating study materials, learners can enter a topic or paste lecture notes and generate structured flashcards and multiple-choice quizzes using Google's Gemini AI.
+Designed around active recall and effective learning techniques, the application enables users to review concepts, test their understanding, revisit incorrect answers, and monitor their learning progress through an interactive dashboard.
 
-The platform combines AI-powered content generation with interactive learning tools and progress analytics to help users identify knowledge gaps, reinforce weak concepts, and monitor their learning journey.
+## Features
 
-### 🎯 Problem Statement
+### 01. AI-Powered Study Generation
 
-Traditional studying often relies heavily on passive reading and repetitive revision, making it difficult to measure actual understanding.
-
-MindForge AI addresses this challenge by transforming learning materials into interactive study experiences that encourage active participation and self-assessment.
-
----
-
-## ✨ Key Features
-
-### 1. 🤖 AI-Powered Study Generation
-
-* Generate structured flashcards from topics or lecture notes.
-* Automatically create multiple-choice practice questions.
+* Enter any topic or paste free-form study notes.
+* Generate structured flashcards and multiple-choice quizzes.
 * Choose between Beginner, Intermediate, and Advanced difficulty.
-* Configure the number of flashcards and quiz questions.
-* Use Google Gemini AI for intelligent content generation.
+* Configure flashcard and quiz quantities.
+* Built-in sample topics for quick exploration.
 
-### 2. 🃏 Interactive Flashcards
+### 02. Interactive Flashcards
 
-* Interactive 3D card-flipping experience.
-* Front-and-back question and answer views.
-* Built-in hints for difficult concepts.
-* Mark cards as **Known** or **Needs Revision**.
+* Interactive 3D card-flipping interface.
+* Questions, answers, and hints.
+* Track mastery using **Known** and **Needs Revision**.
 * Shuffle and restart study sessions.
-* Filter cards requiring additional revision.
+* Filter cards requiring revision.
 * Keyboard navigation using Space and arrow keys.
 
-### 3. 📝 Intelligent Practice Quizzes
+### 03. Practice Quizzes
 
-* Interactive multiple-choice questions.
-* Four answer options per question.
-* Immediate answer feedback and explanations.
-* Automatic score calculation.
-* Detailed quiz result breakdown.
+* Multiple-choice questions with four answer options.
+* Immediate feedback and detailed explanations.
+* Automatic scoring and result breakdown.
 * Retest incorrect questions without repeating the entire quiz.
 
-### 4. 📊 Learning Analytics Dashboard
+### 04. Learning Analytics
 
-* Track total study sets created.
-* Monitor flashcards reviewed and mastered.
-* Measure quiz attempts and average accuracy.
-* Visualize quiz performance trends.
-* Identify frequently missed questions.
-* Track recent study activity.
+* Study sets and flashcard activity tracking.
+* Flashcard mastery statistics.
+* Quiz attempts and average accuracy.
+* Quiz performance trends.
+* Weak-topic identification through missed questions.
+* Recent learning activity.
 
-### 5. 📚 Study Set Management
+### 05. Reliability & User Experience
 
-* Browse saved study sets.
-* Search and filter study materials.
-* View study difficulty and mastery progress.
-* Launch flashcard and quiz sessions directly.
-* Includes a built-in sample deck for exploring the application.
-
-### 6. 🛡️ Backend Reliability & Security
-
-* Server-side Gemini API integration.
-* API key protected using environment variables.
-* Request validation using Zod.
-* AI-generated response validation.
-* Helmet security headers.
-* Configurable CORS protection.
-* IP-based sliding-window rate limiting.
+* Input validation and character limits.
+* Structured AI response validation.
+* Loading, error, and retry states.
 * Request cancellation and timeout handling.
-* Structured and sanitized API error responses.
+* Protection against stale asynchronous responses.
+* Responsive desktop and mobile interface.
 
 ---
 
-## 🛠️ Technology Stack
+## Tech Stack
 
-| Category         | Technologies                       |
-| ---------------- | ---------------------------------- |
-| Frontend         | React 19, TypeScript               |
-| Build Tool       | Vite                               |
-| Styling          | Tailwind CSS v4                    |
-| Icons            | Lucide React                       |
-| Backend          | Node.js, Express.js                |
-| AI Integration   | Google Gemini API, `@google/genai` |
-| Validation       | Zod                                |
-| Security         | Helmet, CORS                       |
-| Data Persistence | Browser LocalStorage               |
-| Testing          | Node.js Test Runner, `tsx`         |
-| Code Quality     | TypeScript Compiler                |
+| Category       | Technologies                       |
+| -------------- | ---------------------------------- |
+| Frontend       | React 19, TypeScript               |
+| Build Tool     | Vite                               |
+| Styling        | Tailwind CSS v4                    |
+| Icons          | Lucide React                       |
+| Backend        | Node.js, Express.js                |
+| AI Integration | Google Gemini API, `@google/genai` |
+| Validation     | Zod                                |
+| Security       | Helmet, CORS                       |
+| Persistence    | Browser LocalStorage               |
+| Testing        | Node.js Test Runner, `tsx`         |
 
 ---
 
-## 🏗️ System Architecture
-
-MindForge AI follows a modular client-server architecture.
+## Application Architecture
 
 ```text
-              ┌─────────────────────────┐
-              │       User              │
-              │  Study Notes / Topics   │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │   React + TypeScript    │
-              │      Frontend           │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │    Express REST API     │
-              │   Request Validation   │
-              │    Rate Limiting       │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │    Gemini AI Service   │
-              │  Structured JSON Output│
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │    Zod Validation      │
-              │  Response Verification │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │  Generated Study Data  │
-              │ Flashcards + Quizzes    │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │   Learning Workspace   │
-              │ Flashcards / Quiz /     │
-              │ Progress Analytics     │
-              └─────────────────────────┘
+              USER INPUT
+                  |
+                  v
+           REACT FRONTEND
+                  |
+                  v
+             EXPRESS API
+                  |
+                  v
+         REQUEST VALIDATION
+                (Zod)
+                  |
+                  v
+             GEMINI API
+                  |
+                  v
+          STRUCTURED JSON
+                  |
+                  v
+        RESPONSE VALIDATION
+                  |
+                  v
+        FRONTEND VALIDATION
+                  |
+          +-------+-------+
+          |       |       |
+          v       v       v
+      FLASHCARDS QUIZ  ANALYTICS
 ```
 
-### AI Generation Workflow
+The application follows a client-server architecture. AI requests are processed through the Express backend, keeping API credentials separate from the frontend.
 
-1. User enters a topic or submits study notes.
-2. Frontend sends a generation request to the Express API.
-3. Backend validates the request using Zod.
-4. Gemini AI generates structured study content.
-5. Generated JSON is validated against the expected schema.
-6. Validated flashcards and quiz questions are returned to the frontend.
-7. Users interact with the generated materials and track their progress.
+Generated content passes through backend schema validation and frontend contract validation before being rendered as interactive React components.
 
 ---
 
-## 📂 Project Structure
+## Handling Unreliable AI Responses
 
-```text
-mindforge-ai/
-│
-├── server/
-│   ├── config/
-│   │   └── env.ts
-│   │
-│   ├── controllers/
-│   │   └── studyController.ts
-│   │
-│   ├── middleware/
-│   │   ├── errorHandler.ts
-│   │   └── security.ts
-│   │
-│   ├── routes/
-│   │   └── studyRoutes.ts
-│   │
-│   ├── services/
-│   │   └── geminiStudyService.ts
-│   │
-│   └── validators/
-│       ├── studyValidators.ts
-│       └── studyValidators.test.ts
-│
-├── src/
-│   ├── components/
-│   │   ├── ComposerView.tsx
-│   │   ├── FlashcardsView.tsx
-│   │   ├── HeaderBar.tsx
-│   │   ├── OverviewView.tsx
-│   │   ├── ProgressView.tsx
-│   │   ├── QuizView.tsx
-│   │   ├── Sidebar.tsx
-│   │   └── StudySetsView.tsx
-│   │
-│   ├── hooks/
-│   │   └── useStudyWorkspace.ts
-│   │
-│   ├── pages/
-│   │   └── WorkspacePage.tsx
-│   │
-│   ├── services/
-│   │   └── studyApi.ts
-│   │
-│   ├── types/
-│   │   └── study.ts
-│   │
-│   ├── utils/
-│   │   ├── studyLogic.ts
-│   │   └── studyLogic.test.ts
-│   │
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
-│
-├── server.ts
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-├── .env.example
-├── .gitignore
-└── README.md
-```
+Reliability is a core part of the application. Generated content and asynchronous requests are handled defensively to prevent unexpected model responses from breaking the user experience.
+
+| Potential Issue              | Handling                                      |
+| ---------------------------- | --------------------------------------------- |
+| Malformed JSON               | Response parsing and validation               |
+| Missing or incorrect fields  | Zod and frontend contract validation          |
+| Empty generated content      | Schema-level validation                       |
+| Duplicate quiz options       | Validation of four distinct options           |
+| Invalid correct answer index | Range validation (`0–3`)                      |
+| Slow requests                | Client and server timeouts                    |
+| Failed API requests          | Structured error responses and retry handling |
+| Request cancellation         | AbortController                               |
+| Out-of-order responses       | Request sequence tracking                     |
+| Excessive API requests       | IP-based rate limiting                        |
 
 ---
 
-## ⚙️ Installation & Setup
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have installed:
-
-* Node.js (LTS recommended)
+* Node.js
 * npm
-* Git
 * Google Gemini API key
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/mindforge-ai.git
-```
-
-```bash
 cd mindforge-ai
 ```
 
@@ -273,7 +172,7 @@ npm install
 
 ### 3. Configure environment variables
 
-Create your local environment file:
+Create a `.env` file from the provided example.
 
 **Windows PowerShell:**
 
@@ -287,163 +186,101 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-Open `.env` and configure:
+Add your Gemini API key:
 
 ```env
-GEMINI_API_KEY=your_actual_gemini_api_key
-
+GEMINI_API_KEY=your_gemini_api_key
 PORT=3000
-
 REQUEST_TIMEOUT_MS=60000
-
 RATE_LIMIT_MAX=30
-
 CORS_ORIGIN=""
 ```
 
-Get your Gemini API key from:
+Get your API key from [Google AI Studio](https://aistudio.google.com/apikey).
 
-https://aistudio.google.com/apikey
+**Important:** Keep your `.env` file private. Never expose your Gemini API key through frontend environment variables or commit it to GitHub.
 
-**Security:** Never commit your actual `.env` file or expose your Gemini API key in frontend code.
-
-### 4. Start the development server
+### 4. Run the application
 
 ```bash
 npm run dev
 ```
 
-Open your browser:
+Open **http://localhost:3000** in your browser.
 
-```text
-http://localhost:3000
-```
-
-### 5. Verify backend health
+### 5. Production build
 
 ```bash
-Invoke-RestMethod http://localhost:3000/api/health
-```
-
-Expected response:
-
-```json
-{
-  "ok": true,
-  "data": {
-    "service": "mindforge-ai-api",
-    "geminiConfigured": true
-  }
-}
+npm run build
+npm start
 ```
 
 ---
 
-## 🧪 Testing & Quality Assurance
+## Testing & Verification
 
-The project includes automated tests for important application logic and backend validation.
-
-### Run TypeScript checks
-
-```bash
-npm run lint
-```
-
-### Run automated tests
+Run automated tests:
 
 ```bash
 npm test
 ```
 
-### Build for production
+Run TypeScript checks:
+
+```bash
+npm run lint
+```
+
+Build for production:
 
 ```bash
 npm run build
 ```
 
-### Verified Results
+### Verification Results
 
-| Quality Check          | Result     |
-| ---------------------- | ---------- |
-| TypeScript compilation | Passed     |
-| Automated test cases   | 11 passed  |
-| Failed tests           | 0          |
-| Production build       | Successful |
-| API health endpoint    | HTTP 200   |
-| Gemini configuration   | Verified   |
+| Check                    | Result     |
+| ------------------------ | ---------- |
+| TypeScript type checking | Passed     |
+| Automated tests          | 11 Passed  |
+| Failed tests             | 0          |
+| Production build         | Successful |
 
 ---
 
-## 🔐 Security Considerations
+## Screenshots
 
-Security and reliability are important parts of the backend implementation.
+<!-- Add screenshots from your application here -->
 
-* Gemini credentials are stored server-side using environment variables.
-* Zod validates incoming requests and generated AI responses.
-* Helmet provides HTTP security headers.
-* CORS controls allowed origins.
-* Rate limiting protects the AI generation endpoint.
-* Request cancellation helps avoid unnecessary generation work.
-* API errors use structured response formats.
-* Client and server request timeouts prevent indefinitely pending operations.
+| Dashboard                | Flashcards                |
+| ------------------------ | ------------------------- |
+| Add dashboard screenshot | Add flashcards screenshot |
 
----
-
-## 📈 Engineering Highlights
-
-Some of the key engineering concepts demonstrated in this project:
-
-* Full-stack development using React and Express.
-* Third-party AI API integration using Google's Gemini SDK.
-* Schema-driven validation of AI-generated JSON.
-* REST API development and middleware architecture.
-* Asynchronous request management and cancellation.
-* Error handling and retry mechanisms.
-* Client-side state management using custom React hooks.
-* Unit testing of business logic.
-* Responsive UI development.
-* Git-based version control.
+| Quiz Results                | Learning Progress       |
+| --------------------------- | ----------------------- |
+| Add quiz results screenshot | Add progress screenshot |
 
 ---
 
-## ⚠️ Current Limitations
+## Known Limitations
 
-* Study sets and learning activity are persisted in browser LocalStorage rather than a centralized database.
-* Rate limiting currently uses in-memory storage.
-* Study material generation supports text input rather than PDF or image uploads.
-* User authentication and multi-user account management are not currently implemented.
-
----
-
-## 🚀 Future Improvements
-
-Potential enhancements include:
-
-* User authentication and personalized study profiles.
-* Database integration using PostgreSQL or MongoDB.
-* PDF and document upload support.
-* Cloud-based study synchronization.
-* Advanced spaced repetition scheduling.
-* Personalized AI learning recommendations.
-* Exporting flashcards and quizzes.
-* More detailed learning analytics.
+* Study sets and learning activity are stored in browser LocalStorage.
+* Rate limiting uses in-memory storage and resets when the server restarts.
+* Study generation currently supports text input; PDF and image uploads are not implemented.
+* Authentication and multi-user synchronization are not included.
 
 ---
 
-## 👨‍💻 Developer
+## Development Time
 
-**Developed as a full-stack AI-powered learning platform project.**
+**Approximately 3 hours 45 minutes**
 
-MindForge AI demonstrates the integration of modern frontend development, backend API engineering, AI-powered content generation, data validation, security middleware, and automated testing.
-
----
-
-## 📄 License
-
-This project is available for educational and portfolio purposes. Add a formal open-source license if you intend to distribute it under specific reuse permissions.
+Includes core implementation, backend integration, UI/UX development, testing, and verification.
 
 ---
 
 <p align="center">
-  <strong>MindForge AI — Learn Smarter. Recall Better. Grow Further.</strong>
+  <strong>MindForge AI</strong>
+  <br />
+  <sub>Learn actively. Recall confidently. Make every study session count.</sub>
 </p>
