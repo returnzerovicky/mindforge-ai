@@ -17,7 +17,6 @@
   <img src="https://img.shields.io/badge/Tests-11%20Passed-success" />
   <img src="https://img.shields.io/badge/Build-Passing-success" />
   <img src="https://img.shields.io/badge/Responsive-Yes-orange" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" />
 </p>
 
 ---
@@ -128,8 +127,6 @@ The application follows a client-server architecture. AI requests are processed 
 
 Generated content passes through backend schema validation and frontend contract validation before being rendered as interactive React components.
 
----
-
 ## Handling Unreliable AI Responses
 
 Reliability is a core part of the application. Generated content and asynchronous requests are handled defensively to prevent unexpected model responses from breaking the user experience.
@@ -149,6 +146,38 @@ Reliability is a core part of the application. Generated content and asynchronou
 
 ---
 
+## Application Screenshots
+
+<p align="center">
+  <strong>Explore the MindForge AI experience</strong>
+</p>
+
+### Dashboard
+
+Overview of study activity, learning statistics, and recent study sets.
+
+![MindForge AI Dashboard](public/screenshots/dashboard.png)
+
+### Interactive Flashcards
+
+Review concepts using interactive cards, hints, and mastery tracking.
+
+![MindForge AI Flashcards](public/screenshots/flashcards.png)
+
+### Practice Quiz Results
+
+View quiz performance, answer feedback, and options to retest incorrect questions.
+
+![MindForge AI Quiz Results](public/screenshots/quiz-results.png)
+
+### Learning Progress
+
+Monitor study activity, quiz performance, and learning progress.
+
+![MindForge AI Learning Progress](public/screenshots/progress.png)
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -160,7 +189,7 @@ Reliability is a core part of the application. Generated content and asynchronou
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mindforge-ai.git
+git clone https://github.com/returnzerovicky/mindforge-ai.git
 cd mindforge-ai
 ```
 
@@ -186,7 +215,7 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-Add your Gemini API key:
+Configure your `.env` file:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
@@ -248,26 +277,39 @@ npm run build
 
 ---
 
-## Screenshots
+## Project Structure
 
-<!-- Add screenshots from your application here -->
-
-| Dashboard                | Flashcards                |
-| ------------------------ | ------------------------- |
-| Add dashboard screenshot | Add flashcards screenshot |
-
-| Quiz Results                | Learning Progress       |
-| --------------------------- | ----------------------- |
-| Add quiz results screenshot | Add progress screenshot |
-
----
+```text
+mindforge-ai/
+├── public/
+│   └── screenshots/
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── routes/
+│   ├── services/
+│   └── validators/
+├── src/
+│   ├── components/
+│   ├── hooks/
+│   ├── pages/
+│   ├── services/
+│   ├── types/
+│   └── utils/
+├── .env.example
+├── .gitignore
+├── package.json
+├── server.ts
+└── vite.config.ts
+```
 
 ## Known Limitations
 
-* Study sets and learning activity are stored in browser LocalStorage.
-* Rate limiting uses in-memory storage and resets when the server restarts.
-* Study generation currently supports text input; PDF and image uploads are not implemented.
-* Authentication and multi-user synchronization are not included.
+* **Browser-Local Persistence:** Study sets and activity logs are stored in browser LocalStorage. Clearing browser storage resets saved progress.
+* **In-Memory Rate Limiting:** Rate limiting uses process memory and resets when the server restarts.
+* **Text Input Only:** Study generation accepts pasted text or topics up to 12,000 characters. PDF and image uploads are not implemented.
+* **No Authentication:** Multi-user accounts and cross-device synchronization are not included.
 
 ---
 
