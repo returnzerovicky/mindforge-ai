@@ -1,6 +1,7 @@
 
 import express from 'express';
 import path from 'node:path';
+import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import { env } from './server/config/env.ts';
@@ -31,17 +32,36 @@ async function createApp() {
   app.use('/api', notFoundApiHandler);
 
   if (env.isProduction) {
-    // Frontend production build
-    const distDir = path.resolve(__dirname, 'dist');
+    const distDir = path.join(__dirname, 'dist');
+    const indexPath = path.join(distDir, 'index.html');
 
-    console.log('Serving frontend from:', distDir);
+    console.log('Production directory:', distDir);
+    console.log('Frontend index exists:', fs.existsSync(indexPath));
+    console.log(
+      'Assets directory exists:',
+      fs.existsSync(path.join(distDir, 'assets'))
+    );
 
-    // Serve CSS, JavaScript, images and other static assets
-    app.use(express.static(distDir));
+    if (!fs.existsSync(indexPath)) {
+      throw new Error(`Frontend build not found: ${indexPath}`);
+    }
 
-    // React SPA fallback (Express 4 compatible)
+    // Serve CSS, JS and other static files
+    app.use(express.static(distDir, {
+      index: false,
+      fallthrough: true,
+    }));
+
+    // Missing assets should return 404
+    app.use('/assets', (_req, res) => {
+      res.status(404).json({
+        error: 'Frontend asset not found',
+      });
+    });
+
+    // React SPA fallback
     app.get('*', (_req, res) => {
-      res.sendFile(path.join(distDir, 'index.html'));
+      res.sendFile(indexPath);
     });
   } else {
     const { createServer: createViteServer } = await import('vite');
@@ -54,20 +74,20 @@ async function createApp() {
     app.use(vite.middlewares);
   }
 
+  // Error handler
   app.use(errorHandlerMiddleware);
 
   return app;
 }
 
+// Start server
 createApp()
   .then((app) => {
     app.listen(env.port, '0.0.0.0', () => {
-      console.log(
-        `MindForge AI server running on port ${env.port}`
-      );
+      console.log(`MindForge AI running on port ${env.port}`);
     });
   })
   .catch((err) => {
-    console.error('Failed to start MindForge AI server:', err);
+    console.error('Failed to start MindForge AI:', err);
     process.exit(1);
   });
