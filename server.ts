@@ -32,14 +32,20 @@ async function createApp() {
   app.use('/api', notFoundApiHandler);
 
   if (env.isProduction) {
-    const distDir = path.join(__dirname, 'dist');
+    const distDir = path.resolve(process.cwd(), 'dist');
     const indexPath = path.join(distDir, 'index.html');
 
+    console.log('Current working directory:', process.cwd());
     console.log('Production directory:', distDir);
-    console.log('Frontend index exists:', fs.existsSync(indexPath));
+    console.log('Index exists:', fs.existsSync(indexPath));
+
+    const assetsDir = path.join(distDir, 'assets');
+
     console.log(
-      'Assets directory exists:',
-      fs.existsSync(path.join(distDir, 'assets'))
+      'Generated assets:',
+      fs.existsSync(assetsDir)
+        ? fs.readdirSync(assetsDir)
+        : 'NOT FOUND'
     );
 
     if (!fs.existsSync(indexPath)) {
